@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var start =$('#start');
-  var minutes = $('#mins');
+  var mins = $('#mins');
   var secs = $('#secs');
 
   start.on('click', startCountdown);
@@ -8,9 +8,11 @@ $(document).ready(function(){
 function startCountdown(){
   setInterval(function(){
     var secondsVal = +secs.text();
+    var minsVal = +mins.text();
     if(secondsVal ===0)
     {
       secs.text(59);
+      mins.text(minsVal-1);
     }
     else
     {
