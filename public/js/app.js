@@ -5,20 +5,26 @@ $(document).ready(function(){
   var breakbutton = $('#breakbutton');
 
   start.on('click', startCountdown);
+  breakbutton.on('click', takeBreak);
+
+
+function takeBreak()
+{
+  mins.text('05');
+  secs.text('00');
+  startCountdown();
+}
 
 function startCountdown(){
-  setInterval(function(){
+  var countdown = setInterval(function(){
     var secondsVal = +secs.text();
     var minsVal = +mins.text();
     if (secondsVal === 0 && minsVal === 0)
     {
       breakbutton.removeClass('disabled');
       breakbutton.removeAttr('disabled');
-      breakbutton.on('click', testCall);
-      function testCall()
-      {
-        alert("I was clicked");
-      }
+      clearInterval(countdown);
+      return;
     }
     if(secondsVal ===0)
     {
