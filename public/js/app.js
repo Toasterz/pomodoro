@@ -14,6 +14,11 @@ function startCountdown(){
     {
       breakbutton.removeClass('disabled');
       breakbutton.removeAttr('disabled');
+      breakbutton.on('click', testCall);
+      function testCall()
+      {
+        alert("I was clicked");
+      }
     }
     if(secondsVal ===0)
     {
