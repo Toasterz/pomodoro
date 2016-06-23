@@ -26,6 +26,7 @@ function startCountdown(){
       clearInterval(countdown);
       return;
     }
+    
     if(secondsVal ===0)
     {
       secs.text(59);
